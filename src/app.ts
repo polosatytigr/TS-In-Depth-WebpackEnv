@@ -19,24 +19,28 @@ enum Category {
 function getAllBooks(): Array<any> {
   let books:Array<any> = [
     {
+      id: 1,
       title: 'Refactoring JavaScript',
       author: 'Evan Burchard',
       available: true,
       category: Category.JavaScript
     },
     {
+      id: 2,
       title: 'JavaScript Testing',
       author: 'Liang Yuxian Eugene',
       available: false,
       category: Category.JavaScript
     },
     {
+      id: 3,
       title: 'CSS Secrets',
       author: 'Lea Verou',
       available: true,
       category: Category.CSS
     },
     {
+      id: 4,
       title: 'Mastering JavaScript Object-Oriented Programming',
       author: 'Andrea Chiarelli',
       available: true,
@@ -83,14 +87,24 @@ function logBookTitles(titles: string[]): void {
   // }
 }
 
+function getBookByID(id: number): any {
+  const books = getAllBooks();
+
+  return books.find(book => book.id === id);
+}
 
 // ========================================================================
 /* TASK: 01 */
 // logFirstAvailable(getAllBooks());
 
 /* TASK: 02 */
-logBookTitles(getBookTitlesByCategory(Category.JavaScript));
+// logBookTitles(getBookTitlesByCategory(Category.JavaScript));
 
+/* TASK: 03 */
+// const titles = getBookTitlesByCategory(Category.JavaScript);
+// titles.forEach(title => console.log(title));
+// const book = getBookByID(2);
+// console.log(book);
 
 
 
