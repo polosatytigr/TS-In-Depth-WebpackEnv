@@ -125,6 +125,26 @@ function сheckoutBooks(customer: string, ...bookIDs: number[]) {
   return titles;
 }
 
+function getTitles(author: string): string[];
+function getTitles(available: boolean): string[];
+function getTitles(bookProperty: any): string[] {
+  const books = getAllBooks();
+
+  if (typeof bookProperty === 'string') {
+    // get books by author and add to foundTitles
+    return books
+        .filter(book => book.author === bookProperty)
+        .map(book => book.title);
+  } else if (typeof bookProperty === 'boolean') {
+    // get books by availability and add to foundTitles
+    return books
+        .filter(book => book.available === bookProperty)
+        .map(book => book.title);
+  }
+
+  return [];
+}
+
 // ========================================================================
 /* TASK: 01. Basic Types */
 // logFirstAvailable(getAllBooks());
@@ -163,11 +183,15 @@ function сheckoutBooks(customer: string, ...bookIDs: number[]) {
 
 // logFirstAvailable();
 
-const myBooks = сheckoutBooks('Ann', 1, 2, 4);
-myBooks.forEach(title => console.log(title));
+// const myBooks = сheckoutBooks('Ann', 1, 2, 4);
+// console.log(myBooks);
+// // myBooks.forEach(title => console.log(title));
 
 
-
+/* TASK: 06. Function Overloading */
+const checkedOutBooks = getTitles(false);
+console.log(checkedOutBooks);
+// // checkedOutBooks.forEach(title => console.log(title));
 
 
 
