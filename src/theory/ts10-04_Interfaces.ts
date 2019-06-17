@@ -1,0 +1,53 @@
+/** TS in Depth: #04. Interfaces */
+/** TS10.04.p01 title */
+/** TS10.04.p02 title */
+/** TS10.04.p03 title */
+/** TS10.04.p04 title */
+/** TS10.04.p05 Defining Interface */
+// interface IBook {
+//     id: number;
+//     title: string;
+//     author: string;
+//     pages?: number;
+//     markDamaged: (reason: string) => void;
+//     readonly pubDate: number;
+//     [propName: string]: any;
+// }
+
+/** TS10.04.p06 Interfaces for Indexable Objects */
+// interface LetterMap {
+//     [index: string]: string; // type of index can be string or number
+//     second: string; // aditional property 'second' must return string
+//     third?: string; // optional property 'third' must return string
+// }
+// const map: LetterMap = {second: "B"};
+// map['first'] = "A";
+// map['third'] = "C";
+
+/** TS10.04.p07 Practice */
+/** TS10.04.p08 title */
+/** TS10.04.p09 title */
+
+/** TS10.04.p10 title */
+/** TS10.04.p11 title */
+/** TS10.04.p12 title */
+/** TS10.04.p13 title */
+/** TS10.04.p14 title */
+/** TS10.04.p15 title */
+/** TS10.04.p16 title */
+/** TS10.04.p17 title */
+/** TS10.04.p18 title */
+/** TS10.04.p19 title */
+
+/** TS10.04.p20 title */
+/** TS10.04.p21 title */
+/** TS10.04.p22 title */
+/** TS10.04.p23 title */
+/** TS10.04.p24 title */
+/** TS10.04.p25 title */
+/** TS10.04.p26 title */
+/** TS10.04.p27 title */
+/** TS10.04.p28 title */
+/** TS10.04.p29 title */
+
+

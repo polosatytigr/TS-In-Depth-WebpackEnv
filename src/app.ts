@@ -7,6 +7,16 @@ function showHello(divName: string, name: string) {
 
 // ========================================================================
 
+interface IBook {
+  id: number;
+  title: string;
+  author: string;
+  available: boolean;
+  category: Category;
+  pages?: number;
+  markDamaged?: (reason: string) => void;
+}
+
 enum Category {
   JavaScript,
   CSS,
@@ -16,8 +26,8 @@ enum Category {
 }
 
 
-function getAllBooks(): Array<any> {
-  let books:Array<any> = [
+function getAllBooks(): Array<IBook> {
+  let books: Array<IBook> = [
     {
       id: 1,
       title: 'Refactoring JavaScript',
@@ -87,7 +97,7 @@ function logBookTitles(titles: string[]): void {
   // }
 }
 
-function getBookByID(id: number): any {
+function getBookByID(id: number): IBook | undefined{
   const books = getAllBooks();
 
   return books.find(book => book.id === id);
@@ -145,6 +155,10 @@ function getTitles(bookProperty: any): string[] {
   return [];
 }
 
+function printBook(book: IBook): void {
+    console.log(`${ book.title } by ${ book.author }`);
+}
+
 // ========================================================================
 /* TASK: 01. Basic Types */
 // logFirstAvailable(getAllBooks());
@@ -189,10 +203,25 @@ function getTitles(bookProperty: any): string[] {
 
 
 /* TASK: 06. Function Overloading */
-const checkedOutBooks = getTitles(false);
-console.log(checkedOutBooks);
+// const checkedOutBooks = getTitles(false);
+// console.log(checkedOutBooks);
 // // checkedOutBooks.forEach(title => console.log(title));
 
+
+/* TASK: 07. Defining an Interface */
+const myBook: IBook = {
+  id: 5,
+  title: 'Colors, Backgrounds, and Gradients',
+  author: 'Eric A. Meyer',
+  available: true,
+  category: Category.CSS,
+  // year: 2015,
+  // copies: 3,
+  pages: 200,
+  markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+};
+printBook(myBook);
+myBook.markDamaged('missing back cover');
 
 
 
