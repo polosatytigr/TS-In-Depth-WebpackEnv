@@ -74,10 +74,39 @@
 // };
 
 /** TS10.04.p14 Practice #09. Extending Interface */
-/** TS10.04.p15 title */
-/** TS10.04.p16 title */
-/** TS10.04.p17 title */
-/** TS10.04.p18 title */
+
+/** TS10.04.p15 INTERFACES FOR CLASS TYPES */
+/** TS10.04.p16 Interfaces for Class Types */
+// interface ILibrarian {
+//     doWork: () => void;
+// }
+// class SchoolLibrarian implements ILibrarian {
+//     doWork(): void {
+//         console.log('Reading ...');
+//     };
+// }
+// let sLibrarian: ILibrarian = new SchoolLibrarian();
+// sLibrarian.doWork();
+
+/** TS10.04.p17 Interfaces for Class Constructor */
+// interface IBookInterface {
+//     title: string;
+//     author: string;
+//     pages: number;
+// }
+// // // interface of constructor
+// interface IBookConstructorInterface {
+//     new (title: string, author: string, pages: number): IBookInterface;
+// }
+// function createBook(ctor: IBookConstructorInterface, title: string, author: string, pages: number): IBookInterfase {
+//     return new ctor(title, author, pages);
+// }
+// class Book implements IBookInterface {
+//     constructor(public title: string, public author: string, public pages: number) {}
+// }
+// const b1 = createBook(Book, 'Title', 'Author', 200);
+
+/** TS10.04.p18 Practice #10. Interfaces for Class Types */
 /** TS10.04.p19 title */
 
 /** TS10.04.p20 title */

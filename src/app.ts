@@ -178,6 +178,17 @@ function printBook(book: IBook): void {
     console.log(`${ book.title } by ${ book.author }`);
 }
 
+class UniversityLibrarian implements ILibrarian {
+  name: string;
+  email: string;
+  department: string;
+
+  assistCustomer(custName: string): void {
+    console.log(`${ this.name } is assisting ${ custName }`);
+  }
+}
+
+
 // ========================================================================
 /* TASK: 01. Basic Types */
 // logFirstAvailable(getAllBooks());
@@ -247,19 +258,21 @@ function printBook(book: IBook): void {
 // logDamage('missing back cover');
 
 /* TASK: 09. Extending Interface */
-const favoriteAuthor: IAuthor = {
-  name: 'authorName',
-  email: 'e@mail.comm',
-  numBooksPublished: 4
-};
-const favoriteLibrarian: ILibrarian = {
-  name: 'authorName',
-  email: 'e@mail.comm',
-  department: 'depName',
-  assistCustomer: (name: string) => console.log(name)
-};
+// const favoriteAuthor: IAuthor = {
+//   name: 'authorName',
+//   email: 'e@mail.comm',
+//   numBooksPublished: 4
+// };
+// const favoriteLibrarian: ILibrarian = {
+//   name: 'authorName',
+//   email: 'e@mail.comm',
+//   department: 'depName',
+//   assistCustomer: (name: string) => console.log(name)
+// };
 
-
-
+/* TASK: 10. Interfaces for Class Types */
+const favoriteLibrarian: ILibrarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Anna';
+favoriteLibrarian.assistCustomer('someone');
 
 
