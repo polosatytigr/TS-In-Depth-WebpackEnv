@@ -14,7 +14,11 @@ interface IBook {
   available: boolean;
   category: Category;
   pages?: number;
-  markDamaged?: (reason: string) => void;
+  markDamaged?: IDamageLogger;
+}
+
+interface IDamageLogger {
+  (reason: string): void;
 }
 
 enum Category {
@@ -209,23 +213,23 @@ function printBook(book: IBook): void {
 
 
 /* TASK: 07. Defining an Interface */
-const myBook: IBook = {
-  id: 5,
-  title: 'Colors, Backgrounds, and Gradients',
-  author: 'Eric A. Meyer',
-  available: true,
-  category: Category.CSS,
-  // year: 2015,
-  // copies: 3,
-  pages: 200,
-  markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
-};
-printBook(myBook);
-myBook.markDamaged('missing back cover');
+// const myBook: IBook = {
+//   id: 5,
+//   title: 'Colors, Backgrounds, and Gradients',
+//   author: 'Eric A. Meyer',
+//   available: true,
+//   category: Category.CSS,
+//   // year: 2015,
+//   // copies: 3,
+//   pages: 200,
+//   markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+// };
+// printBook(myBook);
+// myBook.markDamaged('missing back cover');
 
-
-
-
+/* TASK: 08. Defining an Interface for Function Types */
+const logDamage: IDamageLogger = (reason: string) => console.log(`Damaged: ${reason}`);
+logDamage('missing back cover');
 
 
 

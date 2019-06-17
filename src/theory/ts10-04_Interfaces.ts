@@ -25,10 +25,19 @@
 // map['third'] = "C";
 
 /** TS10.04.p07 Practice */
-/** TS10.04.p08 title */
-/** TS10.04.p09 title */
+/** TS10.04.p08 Interfaces for function Types */
+/** TS10.04.p09 Interfaces for function Types */
+function createCustomerID(name: string, id: number): string {
+    return `${ name }${ id }`;
+}
+interface IStringGenerator {
+    (chars: string, nunm: number): string;
+}
+// let IdGenerator: (chars: string, nunm: number) => string; // Literal declaration of Function type
+let IdGenerator: IStringGenerator;
+IdGenerator = createCustomerID;
 
-/** TS10.04.p10 title */
+/** TS10.04.p10 Practice #08. Defining an Interface for Function Types */
 /** TS10.04.p11 title */
 /** TS10.04.p12 title */
 /** TS10.04.p13 title */
