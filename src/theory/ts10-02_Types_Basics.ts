@@ -196,3 +196,7 @@ type NameOrRunner = Name | Runner;
 //
 // let anotherString: string = 'this is another string';
 // anotherString = returnNumber(); // error
+
+/** TS10.2.p43 Type Difinition (Download and Install) */
+// # npm install --save @types/lodash
+

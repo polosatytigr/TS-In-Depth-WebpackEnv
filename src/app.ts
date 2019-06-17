@@ -51,7 +51,7 @@ function getAllBooks(): Array<any> {
   return books;
 }
 
-function logFirstAvailable(books: Array<any>): void {
+function logFirstAvailable(books = getAllBooks()): void {
   const numberOfBooks: number = books.length;
   let firstAvailabelTitle: string = '';
 
@@ -66,7 +66,7 @@ function logFirstAvailable(books: Array<any>): void {
   console.log(`First available book title "${ firstAvailabelTitle }"`);
 }
 
-function getBookTitlesByCategory(category: Category): Array<string> {
+function getBookTitlesByCategory(category: Category = Category.JavaScript): Array<string> {
   const books = getAllBooks();
   const titles: string[] = [];
 
@@ -97,34 +97,74 @@ function createCustomerID(name: string, id: number): string {
   return `${name}${id}`;
 }
 
+function createCustomer(name: string, age?: number, city?: string): void {
+  if (name) {
+    console.log(`Customer Name: ${ name }`);
+  }
+  if (age) {
+    console.log(`Customer Age: ${ age }`);
+  }
+  if (city) {
+    console.log(`Customer City: ${ city }`);
+  }
+}
+
+function сheckoutBooks(customer: string, ...bookIDs: number[]) {
+  console.log(`Customer Name: ${ customer }`);
+
+  const titles: string[] = [];
+
+  for (const id of bookIDs) {
+    const book = getBookByID(id);
+
+    if (book.available) {
+      titles.push(book.title);
+    }
+  }
+
+  return titles;
+}
+
 // ========================================================================
-/* TASK: 01 */
+/* TASK: 01. Basic Types */
 // logFirstAvailable(getAllBooks());
 
-/* TASK: 02 */
+
+/* TASK: 02. Enum */
 // logBookTitles(getBookTitlesByCategory(Category.JavaScript));
 
-/* TASK: 03 */
+
+/* TASK: 03. Arrow Functions */
 // const titles = getBookTitlesByCategory(Category.JavaScript);
 // titles.forEach(title => console.log(title));
 // const book = getBookByID(2);
 // console.log(book);
 
+
 /* TASK: 04. Function Type */
-let myID: string = createCustomerID('Ann', 10);
-console.log(myID);
+// let myID: string = createCustomerID('Ann', 10);
+// console.log(myID);
 
-let idGenerator: (arg1: string, arg2: number) => string;
-idGenerator = (name: string, id: number) => `${name}${id}`;
-idGenerator = createCustomerID;
-myID = idGenerator('Ann', 100);
-console.log(myID);
-
-
+// let idGenerator: (arg1: string, arg2: number) => string;
+// idGenerator = (name: string, id: number) => `${name}${id}`;
+// idGenerator = createCustomerID;
+// myID = idGenerator('Ann', 100);
+// console.log(myID);
 
 
+/* TASK: 05. Optional, Default and Rest Parameters */
+// createCustomer('Ann');
+// createCustomer('Boris', 30);
+// createCustomer('Clara', 25, 'Boston');
+// createCustomer('Egor', undefined, 'Minsk');
 
+// const titles = getBookTitlesByCategory();
+// console.log(titles);
 
+// logFirstAvailable();
+
+const myBooks = сheckoutBooks('Ann', 1, 2, 4);
+myBooks.forEach(title => console.log(title));
 
 
 
