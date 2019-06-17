@@ -159,9 +159,25 @@
 // 3. May contains implementation details
 // 4. Abstract method are not iplemented
 
-/** TS10.05.p26 title */
-/** TS10.05.p27 title */
-/** TS10.05.p28 title */
-/** TS10.05.p29 title */
+/** TS10.05.p26 CLASS EXPRESSIONS */
+/** TS10.05.p27 Class Expressions */
+let Newspaper = class extends ReferenceItem {
+    printCitation(): void {
+        console.log(`Newspaper: ${ this.title }`);
+    }
+};
+let myPaper = new Newspaper('La Gezetta', 2016);
+myPaper.printCitation();
 
+class Novel extends class {title: string} {
+    mainCharacter: string;
+}
+let favoriteNovel = new Novel();
+
+/** TS10.05.p28 Summary */
+// 1. What is Class
+// 2. Class Members: constructor, properties, method, accessors, access modifiers
+// 3. Inheritance
+// 4. Abstract Classes
+// 5. Class Expressions
 
