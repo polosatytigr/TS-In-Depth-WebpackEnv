@@ -189,15 +189,24 @@ class UniversityLibrarian implements ILibrarian {
 }
 
 class ReferenceItem {
+  // title: string;
+  // year: number;
+  // constructor(newTitle: string, newYear: number) {
+  //   this.title = newTitle;
+  //   this.year = newYear;
+  //   console.log('Creating a new ReferenceItem...');
+  // }
+
+  constructor(public title: string, private year: number) {
+    console.log('Creating a new ReferenceItem...');
+  }
+
   private _publisher: string;
   get publisher(): string {
     return this._publisher.toUpperCase();
   }
   set publisher(newPublisher: string) {
     this._publisher = newPublisher;
-  }
-  constructor(public title: string, private year: number) {
-    console.log('Creating a new ReferenceItem...');
   }
   static department; string;
   printItem(): void {
