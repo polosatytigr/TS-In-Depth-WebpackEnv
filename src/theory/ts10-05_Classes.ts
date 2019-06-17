@@ -152,8 +152,13 @@
 
 /** TS10.05.p23 Practice #12. Extending Classes */
 
-/** TS10.05.p24 title */
-/** TS10.05.p25 title */
+/** TS10.05.p24 ABSTRACT CLASESS */
+/** TS10.05.p25 Abstract Clasess */
+// 1. created with 'abstract' keyword
+// 2. Base clasess cannot be instantiated
+// 3. May contains implementation details
+// 4. Abstract method are not iplemented
+
 /** TS10.05.p26 title */
 /** TS10.05.p27 title */
 /** TS10.05.p28 title */

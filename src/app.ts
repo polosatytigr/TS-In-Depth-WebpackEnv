@@ -188,7 +188,7 @@ class UniversityLibrarian implements ILibrarian {
   }
 }
 
-class ReferenceItem {
+abstract class ReferenceItem {
   // title: string;
   // year: number;
   // constructor(newTitle: string, newYear: number) {
@@ -213,6 +213,8 @@ class ReferenceItem {
     console.log(`${ this.title } was published in ${ this.year }`);
     console.log(`Departments: ${ ReferenceItem.department }`);
   }
+
+  abstract printCitation(): void;
 }
 
 class Encyclopedia extends ReferenceItem {
@@ -222,6 +224,9 @@ class Encyclopedia extends ReferenceItem {
   printItem(): void {
     super.printItem();
     console.log(`Edition: ${ this.edition } (${ this.year })`);
+  }
+  printCitation(): void {
+    console.log(`${ this.title } - ${ this.year }`);
   }
 }
 
@@ -318,6 +323,18 @@ class Encyclopedia extends ReferenceItem {
 // ref.publisher = 'should be in uppercase';
 // console.log(ref.publisher, (<any>ref.constructor).department);
 
-/*  */
+/* TASK: 12. Extending Classes */
+// const refBook: Encyclopedia = new Encyclopedia('EncTitle', 2019, 2);
+// refBook.printItem();
+// console.log(refBook);
+
+/* TASK: 13. Creating Abstract Classes */
 const refBook: Encyclopedia = new Encyclopedia('EncTitle', 2019, 2);
-refBook.printItem();
+refBook.printCitation();
+
+
+
+
+
+
+
