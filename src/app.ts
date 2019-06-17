@@ -93,6 +93,10 @@ function getBookByID(id: number): any {
   return books.find(book => book.id === id);
 }
 
+function createCustomerID(name: string, id: number): string {
+  return `${name}${id}`;
+}
+
 // ========================================================================
 /* TASK: 01 */
 // logFirstAvailable(getAllBooks());
@@ -106,7 +110,15 @@ function getBookByID(id: number): any {
 // const book = getBookByID(2);
 // console.log(book);
 
+/* TASK: 04. Function Type */
+let myID: string = createCustomerID('Ann', 10);
+console.log(myID);
 
+let idGenerator: (arg1: string, arg2: number) => string;
+idGenerator = (name: string, id: number) => `${name}${id}`;
+idGenerator = createCustomerID;
+myID = idGenerator('Ann', 100);
+console.log(myID);
 
 
 
