@@ -21,6 +21,21 @@ interface IDamageLogger {
   (reason: string): void;
 }
 
+interface IPerson {
+  name: string;
+  email: string;
+}
+
+interface IAuthor extends IPerson {
+  numBooksPublished: number;
+}
+
+interface ILibrarian extends IPerson {
+  department: string;
+  assistCustomer: (custName: string) => void;
+}
+
+
 enum Category {
   JavaScript,
   CSS,
@@ -228,12 +243,21 @@ function printBook(book: IBook): void {
 // myBook.markDamaged('missing back cover');
 
 /* TASK: 08. Defining an Interface for Function Types */
-const logDamage: IDamageLogger = (reason: string) => console.log(`Damaged: ${reason}`);
-logDamage('missing back cover');
+// const logDamage: IDamageLogger = (reason: string) => console.log(`Damaged: ${reason}`);
+// logDamage('missing back cover');
 
-
-
-
+/* TASK: 09. Extending Interface */
+const favoriteAuthor: IAuthor = {
+  name: 'authorName',
+  email: 'e@mail.comm',
+  numBooksPublished: 4
+};
+const favoriteLibrarian: ILibrarian = {
+  name: 'authorName',
+  email: 'e@mail.comm',
+  department: 'depName',
+  assistCustomer: (name: string) => console.log(name)
+};
 
 
 
