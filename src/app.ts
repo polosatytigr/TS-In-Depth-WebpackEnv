@@ -188,6 +188,23 @@ class UniversityLibrarian implements ILibrarian {
   }
 }
 
+class ReferenceItem {
+  private _publisher: string;
+  get publisher(): string {
+    return this._publisher.toUpperCase();
+  }
+  set publisher(newPublisher: string) {
+    this._publisher = newPublisher;
+  }
+  constructor(public title: string, private year: number) {
+    console.log('Creating a new ReferenceItem...');
+  }
+  static department; string;
+  printItem(): void {
+    console.log(`${ this.title } was published in ${ this.year }`);
+    console.log(`Departments: ${ ReferenceItem.department }`);
+  }
+}
 
 // ========================================================================
 /* TASK: 01. Basic Types */
@@ -271,8 +288,15 @@ class UniversityLibrarian implements ILibrarian {
 // };
 
 /* TASK: 10. Interfaces for Class Types */
-const favoriteLibrarian: ILibrarian = new UniversityLibrarian();
-favoriteLibrarian.name = 'Anna';
-favoriteLibrarian.assistCustomer('someone');
+// const favoriteLibrarian: ILibrarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Anna';
+// favoriteLibrarian.assistCustomer('someone');
+
+/* TASK: 11. Creating and Using Classes */
+let ref: ReferenceItem = new ReferenceItem('TypeScript', 2019);
+ReferenceItem.department = 'Top Secret Department';
+ref.printItem();
+ref.publisher = 'should be in uppercase';
+console.log(ref.publisher, (<any>ref.constructor).department);
 
 

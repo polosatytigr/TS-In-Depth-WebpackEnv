@@ -107,17 +107,4 @@
 // const b1 = createBook(Book, 'Title', 'Author', 200);
 
 /** TS10.04.p18 Practice #10. Interfaces for Class Types */
-/** TS10.04.p19 title */
-
-/** TS10.04.p20 title */
-/** TS10.04.p21 title */
-/** TS10.04.p22 title */
-/** TS10.04.p23 title */
-/** TS10.04.p24 title */
-/** TS10.04.p25 title */
-/** TS10.04.p26 title */
-/** TS10.04.p27 title */
-/** TS10.04.p28 title */
-/** TS10.04.p29 title */
-
-
+/** TS10.04.p19 Summary */
