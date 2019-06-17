@@ -197,7 +197,7 @@ class ReferenceItem {
   //   console.log('Creating a new ReferenceItem...');
   // }
 
-  constructor(public title: string, private year: number) {
+  constructor(public title: string, protected year: number) {
     console.log('Creating a new ReferenceItem...');
   }
 
@@ -208,10 +208,20 @@ class ReferenceItem {
   set publisher(newPublisher: string) {
     this._publisher = newPublisher;
   }
-  static department; string;
+  static department: string = 'Fiction';
   printItem(): void {
     console.log(`${ this.title } was published in ${ this.year }`);
     console.log(`Departments: ${ ReferenceItem.department }`);
+  }
+}
+
+class Encyclopedia extends ReferenceItem {
+  constructor(title: string, year: number, public edition: number) {
+    super(title, year);
+  }
+  printItem(): void {
+    super.printItem();
+    console.log(`Edition: ${ this.edition } (${ this.year })`);
   }
 }
 
@@ -302,10 +312,12 @@ class ReferenceItem {
 // favoriteLibrarian.assistCustomer('someone');
 
 /* TASK: 11. Creating and Using Classes */
-let ref: ReferenceItem = new ReferenceItem('TypeScript', 2019);
-ReferenceItem.department = 'Top Secret Department';
-ref.printItem();
-ref.publisher = 'should be in uppercase';
-console.log(ref.publisher, (<any>ref.constructor).department);
+// let ref: ReferenceItem = new ReferenceItem('TypeScript', 2019);
+// ReferenceItem.department = 'Top Secret Department';
+// ref.printItem();
+// ref.publisher = 'should be in uppercase';
+// console.log(ref.publisher, (<any>ref.constructor).department);
 
-
+/*  */
+const refBook: Encyclopedia = new Encyclopedia('EncTitle', 2019, 2);
+refBook.printItem();

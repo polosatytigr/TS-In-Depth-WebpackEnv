@@ -131,10 +131,27 @@
 
 /** TS10.05.p19 Practice #11. Creating and Using Classes */
 
-/** TS10.05.p20 title */
-/** TS10.05.p21 title */
-/** TS10.05.p22 title */
-/** TS10.05.p23 title */
+/** TS10.05.p20 EXTENDING CLASSES WITH INHERITANCES */
+/** TS10.05.p21 Inheritances */
+/** TS10.05.p22 Extending Classes with Inheritances */
+// class ReferenceItem {
+//     title: string;
+//     year: number;
+//     printItem(): void {
+//         // print something
+//     }
+// }
+//
+// class Journal extends ReferenceItem {
+//     contributors: string[];
+//     constructor() {
+//         super();
+//         // initialization
+//     }
+// }
+
+/** TS10.05.p23 Practice #12. Extending Classes */
+
 /** TS10.05.p24 title */
 /** TS10.05.p25 title */
 /** TS10.05.p26 title */
